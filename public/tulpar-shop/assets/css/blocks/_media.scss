@@ -1,0 +1,408 @@
+// MIN WIDTH 576px
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+
+        &-fluid {
+            max-width: 540px;
+        }
+    }
+}
+// MIN WIDTH 768px
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+
+        &-fluid {
+            max-width: 720px;
+        }
+    }
+}
+// MIN WIDTH 992px
+@media (min-width: 992px) {
+    .container {
+        max-width: 1024px;
+
+        &-fluid {
+            max-width: 1024px;
+        }
+    }
+    .header {
+        .button-close {
+            display: none;
+        }
+    }
+    .aside-hover-close {
+        display: none;
+    }
+    .bottom-tab {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1630px;
+
+        &-fluid {
+            max-width: 1140px;
+        }
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .aside {
+        &-block {
+            width: 300px;
+
+            > .card {
+                width: 255px;
+            }
+        }
+    }
+    .hero {
+        &-top {
+            .swiper {
+                height: 200px;
+
+                &-slide {
+                    img {
+                        min-width: auto;
+                        max-width: auto;
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+    .product {
+        &-item {
+            .image {
+                height: 190px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .text {
+        &-xs {
+            font-size: 0.7rem;
+        }
+        &-sm {
+            font-size: 0.8rem;
+        }
+        &-base {
+            font-size: 0.875rem;
+        }
+        &-lg {
+            font-size: 1rem;
+        }
+        &-xl {
+            font-size: 1.125rem;
+        }
+        &-2xl {
+            font-size: 1.25rem;
+        }
+        &-3xl {
+            font-size: 1.5rem;
+        }
+        &-4xl {
+            font-size: 1.875rem;
+        }
+        &-5xl {
+            font-size: 2.25rem;
+        }
+        &-6xl {
+            font-size: 3rem;
+        }
+        &-7xl {
+            font-size: 3.75rem;
+        }
+        &-8xl {
+            font-size: 4rem;
+        }
+        &-9xl {
+            font-size: 6rem;
+        }
+    }
+    .wrapper {
+        margin: 0;
+    }
+    .aside {
+        &-block {
+            width: 100%;
+        }
+        &-submenu {
+            left: 0;
+            width: 100%;
+        }
+    }
+    .hero {
+        &-top {
+            .slider-hero-left,
+            .slider-hero-right {
+                position: absolute !important;
+            }
+            .slider-hero-left {
+
+            }
+            .slider-hero-right {
+                right: 0 !important;
+            }
+            .slider-hero {
+                height: auto;
+                .swiper {
+                    &-slide {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding: 1rem 0;
+                        row-gap: 1rem;
+
+                        .hero-title {
+                            order: 1;
+                        }
+                        img {
+                            order: 2;
+                            width: 144px;
+                        }
+                    }
+                }
+            }
+        }
+        &-bottom {
+            .swiper {
+                &-slide {
+                    .card {
+                        padding: 0.75rem 1rem;
+                        height: 110px;
+
+                        h3 {
+                            font-size: 1rem;
+                        }
+                        p {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .new-products {
+        .product {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .partners {
+        .partner {
+            &-logo {
+                padding: 1rem;
+                width: 145px;
+                height: 95px;
+            }
+        }
+    }
+    #main {
+        padding: 0.5rem;
+        .information {
+            columns: 1;
+        }
+    }
+    .catalog {
+        .title {
+            margin-bottom: 1rem;
+        }
+        .form {
+            &-search {
+                padding: 0.75rem;
+            }
+        }
+        .product {
+            grid-template-columns: 1fr 1fr;
+        }
+        .information {
+            columns: 1;
+        }
+    }
+    .main {
+        &-block {
+            margin-top: 4.5rem;
+            main {
+                .container {
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+    .pagination {
+        flex-direction: column;
+        row-gap: 1rem;
+        .button {
+            &-white, &-pagination-arrow {
+                width: 100%;
+            }
+        }
+        &-list {
+            flex-wrap: wrap;
+            row-gap: 0.25rem;
+        }
+    }
+    .product {
+        &-page {
+            padding: 0.5rem;
+
+            .product {
+                > .title {
+                    margin: 1.5rem 0 1rem 0;
+                }
+            }
+        }
+        &-block {
+            flex-direction: column;
+        }
+        &-slider-image {
+            width: 100%;
+            height: auto;
+        }
+        &-text {
+            > .card {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .button {
+                    width: 100%;
+                    margin-left: 0;
+
+                    + .button {
+                        margin-left: 0;
+                        margin-top: 0.5rem;
+                    }
+                }
+                .price {
+                    margin-bottom: 1rem;
+                    flex-direction: row;
+                    column-gap: 1rem;
+
+                    &-new {
+                        font-size: 1.5rem;
+                    }
+                    &-old {
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            .characteristic {
+                &-block {
+                    grid-template-columns: 1fr;
+                }
+                &-item {
+                    padding: 0.5rem 0;
+                }
+            }
+        }
+    }
+    .breadcrumbs {
+        ul {
+            flex-wrap: wrap;
+            row-gap: 0.5rem;
+        }
+    }
+    .order {
+        &-page {
+            padding: 0.5rem;
+        }
+        &-block {
+            flex-direction: column;
+        }
+        &-progress {
+            column-gap: 0.5rem;
+            .progress {
+                &-bar {
+                    width: 25%;
+                    height: 2px;
+                }
+            }
+        }
+        &-info {
+            .card {
+                margin-top: 0;
+            }
+        }
+        &-item {
+            .form {
+                &-profile {
+                    .form {
+                        &-item {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            row-gap: 0.25rem;
+
+                            p {
+                                width: auto;
+                            }
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .form {
+        &-gray {
+            &.-address {
+                width: 100%;
+
+                .-street, .-home, .-flat, .-entrance, .-floor, .-index {
+                    width: 100%;
+                }
+            }
+            &.-pay {
+                width: 100%;
+
+                .-period, .-cvc {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .modal {
+        width: 100%;
+        right: -150%;
+        z-index: 25;
+        padding-top: 4.5rem;
+
+        .button-close {
+            left: auto;
+            right: 20px;
+            top: 4.85rem;
+        }
+    }
+    #main-contact, #main-about {
+        padding: 0.5rem;
+    }
+    .contact {
+        &-info {
+            grid-template-columns: 1fr;
+
+            &__item {
+                margin-top: 1.5rem;
+            }
+        }
+        &-address {
+            flex-direction: column;
+        }
+        .map {
+            width: 100%;
+        }
+    }
+    .about {
+        .information {
+            width: 100%;
+        }
+    }
+}

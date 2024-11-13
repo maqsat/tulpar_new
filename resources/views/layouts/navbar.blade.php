@@ -19,24 +19,8 @@
             <div class="aside-submenu">
                 <div class="card">
                     <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Для сварщика</p>
+                        <p class="text text-base text-medium">Новинки Для сварщика</p>
                         <span class="text text-gray text-sm text-regular">・788</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Зимняя спецодежда</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Летняя спецодежда</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Влагозащитная одежда</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Одежда для охранных структур</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
                     </a>
                 </div>
             </div>
@@ -52,22 +36,6 @@
                     <a href="#" class="aside-submenu__link">
                         <p class="text text-base text-medium">Товары по акции Для сварщика</p>
                         <span class="text text-gray text-sm text-regular">・788</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Товары по акции Зимняя спецодежда</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Летняя спецодежда</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Влагозащитная одежда</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
-                    </a>
-                    <a href="#" class="aside-submenu__link">
-                        <p class="text text-base text-medium">Одежда для охранных структур</p>
-                        <span class="text text-gray text-sm text-regular">・16</span>
                     </a>
                 </div>
             </div>
@@ -143,6 +111,17 @@
         <div class="aside-menu__link -last" onmouseenter="toggleBodyOverflow(true)" onmouseleave="toggleBodyOverflow(false)">
             <div class="aside-menu__name">
                 <p class="text text-regular text-base">Другие товары</p>
+            </div>
+            <i class="icon icon-arrow-right"></i>
+            <div class="aside-submenu">
+                <div class="card">
+                    @foreach(\App\Models\Service::whereParentId(5)->get() as $key => $item)
+                        <a href="/catalog/{{ $item->url }}" class="aside-submenu__link">
+                            <p class="text text-base text-medium">{{ $item->title }}</p>
+                            <span class="text text-gray text-sm text-regular">・{{ \App\Models\Post::where('type',$item->id)->count() }}</span>
+                        </a>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

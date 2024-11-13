@@ -5,10 +5,12 @@
     <main id="main-product">
         <div class="container-fluid">
             <section class="product-page" id="product-page">
-                <button class="button button-back">
-                    <i class="icon icon-arrow-left-back"></i>
-                    Назад
-                </button>
+                <a href="{{ url()->previous() }}">
+                    <button class="button button-back">
+                        <i class="icon icon-arrow-left-back"></i>
+                        Назад
+                    </button>
+                </a>
                 <div class="breadcrumbs">
                     <ul>
                         <li><a href="/" class="text-gray text-xs text-regular text-underline">Главная</a></li>

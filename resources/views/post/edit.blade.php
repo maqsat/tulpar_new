@@ -150,7 +150,7 @@
                                 <div class="form-group">
                                     <label class="col-md-12">Сортировка(порядок отображение на главной странице)</label>
                                     <div class="col-md-12">
-                                        <input type="text" value="{{ old('sort',$post->sort) }}" name="sort" class="form-control form-control-line">
+                                        <input type="number" value="{{ old('sort',$post->sort) }}" name="sort" class="form-control form-control-line">
                                         @if ($errors->has('sort'))
                                             <span class="help-block text-danger"><small>{{ $errors->first('sort') }}</small></span>
                                         @endif
@@ -161,14 +161,18 @@
                                     <label class="col-md-12">Картинка</label>
                                     <div class="col-md-12">
 
-                                        <input type="hidden" value="{{ $post->photo }}" name="photo">
-                                        <input type="file" name="photo" class="form-control form-control-line">
+                                        <input type="file" name="new-photo[]" multiple class="form-control form-control-line">
                                         @if ($errors->has('photo'))
                                             <span class="help-block text-danger"><small>{{ $errors->first('photo') }}</small></span>
                                         @endif
 
-                                        @if(isset($post->photo))
-                                            <img src="{{ asset($post->photo) }}" style=" width: 200px;padding: 10px; height: 150px;float: right;object-fit: contain;">
+                                        @if($post->photo != '')
+                                            @foreach(json_decode($post->photo) as $item)
+                                                <div>
+                                                    <input type="hidden" value="{{ $item }}" name="photo[]">
+                                                    <img src="{{ asset($item) }}" style=" width: 200px;padding: 10px; height: 150px;float: right;object-fit: contain;">
+                                                </div>
+                                            @endforeach
                                         @endif
                                     </div>
                                 </div>

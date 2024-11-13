@@ -148,7 +148,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">Сортировка(порядок отображение на главной странице)</label>
                                 <div class="col-md-12">
-                                    <input type="text" value="{{ old('sort') }}" name="sort" class="form-control form-control-line">
+                                    <input type="number" value="{{ old('sort') }}" name="sort" class="form-control form-control-line">
                                     @if ($errors->has('sort'))
                                         <span class="help-block text-danger"><small>{{ $errors->first('sort') }}</small></span>
                                     @endif
@@ -159,7 +159,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">Картинка</label>
                                 <div class="col-md-12">
-                                    <input type="file" name="photo" class="form-control form-control-line">
+                                    <input type="file" name="photo[]" multiple class="form-control form-control-line">
                                     @if ($errors->has('photo'))
                                         <span class="help-block text-danger"><small>{{ $errors->first('photo') }}</small></span>
                                     @endif

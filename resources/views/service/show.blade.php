@@ -21,22 +21,24 @@
                 <div class="product">
                     @foreach($posts as $key => $item)
                         <div class="product-item">
-                        <div class="content">
-                            <div class="image">
-                                <img src="./assets/img/slider-image-1.jpg" alt="">
-                                <button class="button button-bookmark active">
-                                    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 19L8 14L1 19V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H13C13.5304 1 14.0391 1.21071 14.4142 1.58579C14.7893 1.96086 15 2.46957 15 3V19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
+                        <a href="/product/{{$item->url}}">
+                            <div class="content">
+                                <div class="image">
+                                    <img src="/{{ json_decode($item->photo)[0] }}" alt="">
+                                    <button class="button button-bookmark active">
+                                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 19L8 14L1 19V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H13C13.5304 1 14.0391 1.21071 14.4142 1.58579C14.7893 1.96086 15 2.46957 15 3V19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="price">
+                                    <p class="price-new text-base text-bold text-brand">{{ number_format($item->cost, 0, '', ' ') }}&#8376;</p>
+                                    <p class="price-old text-sm text-regular text-gray text-line-through">{{ $item->cost+($item->cost*0.12) }}&#8376;</p>
+                                    <span class="price-sale text-xs text-regular text-orange">-12%</span>
+                                </div>
+                                <h3 class="title text text-sm text-regular">{{ $item->title }}</h3>
                             </div>
-                            <div class="price">
-                                <p class="price-new text-base text-bold text-brand">{{ number_format($item->cost, 0, '', ' ') }}&#8376;</p>
-                                <p class="price-old text-sm text-regular text-gray text-line-through">{{ $item->cost+($item->cost*0.12) }}&#8376;</p>
-                                <span class="price-sale text-xs text-regular text-orange">-12%</span>
-                            </div>
-                            <h3 class="title text text-sm text-regular">{{ $item->title }}</h3>
-                        </div>
+                        </a>
                         <button class="button button-brand">В корзину</button>
                     </div>
                     @endforeach

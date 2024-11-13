@@ -52,12 +52,16 @@ class PostController extends Controller
             'meta_description' => 'required',
         ]);
 
-        if ($request->hasFile('photo')) {
-            $tmp_path = date('Y')."/".date('m')."/".date('d')."/".$request->photo->getFilename().'.'.$request->photo->getClientOriginalExtension();
-            $path = $request->photo->storeAs('public/images', $tmp_path);
-            $request->photo = str_replace("public", "storage", $path);
-        }
 
+        if ($request->hasFile('photo')) {
+            $paths = [];
+            foreach ($request->file('photo') as $item){
+                $tmp_path = '/public/images/'.date('Y')."/".date('m')."/".date('d');//."/".$item->getFilename().'.'.$item->getClientOriginalExtension()
+                $path = $item->store($tmp_path);
+                $paths[] =  str_replace("public", "storage", $path);
+
+            }
+        }
 
         Post::create([
             'type' => $request->type,
@@ -73,7 +77,7 @@ class PostController extends Controller
             'season' => $request->season,
             'protection' => $request->protection,
             'sort' => $request->sort,
-            'photo' => $request->photo,
+            'photo' => json_encode($paths),
             'meta_keywords' => $request->meta_keywords,
             'meta_description' => $request->meta_description,
         ]);
@@ -122,11 +126,17 @@ class PostController extends Controller
             'meta_description' => 'required',
         ]);
 
-        if ($request->hasFile('photo')) {
-            $tmp_path = date('Y')."/".date('m')."/".date('d')."/".$request->photo->getFilename().'.'.$request->photo->getClientOriginalExtension();
-            $path = $request->photo->storeAs('public/images', $tmp_path);
-            $request->photo = str_replace("public", "storage", $path);
+
+        if ($request->hasFile('new-photo')) {
+            $paths = $request->photo;
+            foreach ($request->file('new-photo') as $item){
+                $tmp_path = '/public/images/'.date('Y')."/".date('m')."/".date('d');//."/".$item->getFilename().'.'.$item->getClientOriginalExtension()
+                $path = $item->store($tmp_path);
+                $paths[] =  str_replace("public", "storage", $path);
+
+            }
         }
+
 
 
         $post->update([
@@ -143,7 +153,7 @@ class PostController extends Controller
             'season' => $request->season,
             'protection' => $request->protection,
             'sort' => $request->sort,
-            'photo' => $request->photo,
+            'photo' => json_encode($paths),
             'meta_keywords' => $request->meta_keywords,
             'meta_description' => $request->meta_description,
         ]);

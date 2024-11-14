@@ -25,7 +25,7 @@
             <nav class="header-nav">
                 <ul class="header-nav__list">
                     <li><a href="/" class="nav-link text text-medium text-base">Главная</a></li>
-                    <li><a href="/catalog" class="nav-link @if(Illuminate\Support\Facades\Route::currentRouteName() == 'category') active @endif text text-medium text-base">Каталог</a></li>
+                    <li><a href="/catalog/all" class="nav-link @if(Illuminate\Support\Facades\Route::currentRouteName() == 'category') active @endif text text-medium text-base">Каталог</a></li>
                     <li><a href="/about" class="nav-link @if(Illuminate\Support\Facades\Route::currentRouteName() == 'about') active @endif text text-medium text-base">О нас</a></li>
                     <li><a href="/contact" class="nav-link @if(Illuminate\Support\Facades\Route::currentRouteName() == 'contact') active @endif text text-medium text-base">Контакты</a></li>
                 </ul>

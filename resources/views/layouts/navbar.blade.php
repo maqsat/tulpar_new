@@ -4,7 +4,7 @@
 @endphp
 <aside class="aside-block @if(!in_array(Illuminate\Support\Facades\Route::currentRouteName(),$names)) hidden @endif">
     <div class="card">
-        <a href="#" class="logo">
+        <a href="/" class="logo">
             <img src="/tulpar-shop/assets/img/logo.svg" alt="Tulpar shop logo">
         </a>
     </div>

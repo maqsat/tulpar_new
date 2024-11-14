@@ -64,30 +64,46 @@
             <h2 class="title text-2xl text-bold">Популярное категории</h2>
             <div class="swiper slider-popular">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <h3 class="text text-xl text-bold">Спецодежда</h3>
-                            <img src="/tulpar-shop/assets/img/slider-image-6.png" alt="">
+
+                        <div class="swiper-slide">
+                            <a href="/catalog/cpecodezda">
+                            <div class="card">
+                                <h3 class="text text-xl text-bold">Спецодежда</h3>
+                                <img src="/tulpar-shop/assets/img/slider-image-6.png" alt="">
+                            </div>
+                            </a>
                         </div>
-                    </div>
+
+
                     <div class="swiper-slide">
+                        <a href="/catalog/siz">
                         <div class="card">
                             <h3 class="text text-xl text-bold" style="color: #fff;">СИЗ</h3>
                             <img src="/tulpar-shop/assets/img/slider-image-7.png" alt="">
                         </div>
+                        </a>
                     </div>
+
+
                     <div class="swiper-slide">
+                        <a href="/catalog/specobuv">
                         <div class="card">
                             <h3 class="text text-xl text-bold" style="color: #fff;">Спец. обувь</h3>
                             <img src="/tulpar-shop/assets/img/slider-image-8.png" alt="">
                         </div>
+                        </a>
                     </div>
+
+
                     <div class="swiper-slide">
+                        <a href="/catalog/percatki-i-rukavicy">
                         <div class="card">
                             <h3 class="text text-xl text-bold" style="color: #fff;">Перчатки и руковицы</h3>
                             <img src="/tulpar-shop/assets/img/slider-image-9.png" alt="">
                         </div>
+                        </a>
                     </div>
+
                 </div>
             </div>
         </section>

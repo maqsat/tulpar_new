@@ -34,7 +34,16 @@ class IndexController extends Controller
     public function showCategory($slug)
     {
         $category = Service::where('url',$slug)->first();
-        $posts = Post::where('type',$category->id)->get();
+
+        if (is_null($category)) $posts = Post::paginate(30);
+        elseif ($category->id < 5){
+            $categories = Service::where('parent_id',$category->id)->pluck('id');
+
+            $posts = Post::whereIn('type',$categories)->get();
+        }
+
+        else $posts = Post::where('type',$category->id)->get();
+
         return view('service.show', compact('posts'));
     }
 

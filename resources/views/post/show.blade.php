@@ -33,21 +33,13 @@
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
-                                    <div class="swiper-slide">
-                                        <img src="/tulpar-shop/assets/img/slider-image-1.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/tulpar-shop/assets/img/slider-image-2.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/tulpar-shop/assets/img/slider-image-3.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/tulpar-shop/assets/img/slider-image-4.jpg" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/tulpar-shop/assets/img/slider-image-5.jpg" alt="">
-                                    </div>
+                                    @if($post->photo != '')
+                                        @foreach(json_decode($post->photo) as $item)
+                                            <div class="swiper-slide">
+                                                <img src="{{ asset($item) }}" alt="">
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                             <!-- Slider thumbnail container -->
